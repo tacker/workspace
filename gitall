@@ -33,9 +33,9 @@ const run = async (cmd, cwd = process.cwd(), progress = false) =>
       if (code !== 0) {
         return reject(
           new Error(
-            `${command} ${args && args.join(" ")} failed: ${errors.join(
-              os.EOL
-            )}`
+            `${command} ${
+              args && args.join(" ")
+            } failed in ${cwd}: ${errors.join(os.EOL)}`
           )
         );
       }
